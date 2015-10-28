@@ -1,39 +1,41 @@
 import React, { Component } from 'react';
-import { NICE, SUPER_NICE } from './colors';
+import Bar from './Bar.js';
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0 };
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
+var now = new Date().getTime();
 
-  tick() {
-    this.setState({
-      counter: this.state.counter + this.props.increment
-    });
-  }
+var dummyData = [];
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    return (
-      <h1 style={{ color: this.props.color }}>
-        Counter ({this.props.increment}): {this.state.counter}
-      </h1>
-    );
-  }
+//dummy data
+for( let i=0; i < 50; i++ ){
+  let day = now - 86400000 * i ;
+  dummyData.unshift({ x: new Date(day), y: Math.random() * 100});
 }
+
+var chartData = [
+  { 
+    "name": "Series A",
+    "values": dummyData
+  }
+];
+
+var lineChartPosition = {
+  top: 220,
+  left: 65,
+  chartWidth: 441,
+};
 
 export class App extends Component {
   render() {
     return (
       <div>
-        <Counter increment={-1} color={NICE} />
-        <Counter increment={5} color={SUPER_NICE} />
+        <Bar data={chartData} 
+             heigh={200} 
+             width={500} 
+             top={220} 
+             left={65} />
       </div>
     );
   }
+
+
 }
