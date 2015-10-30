@@ -81,7 +81,7 @@ export default class Area extends Component {
                   height={this.props.height}
                   fill={'#3182bd'}
                   xAxisTickInterval={this.props.xAxisTickInterval}
-                  title='Area Chart'
+                  title={this.props.title}
         />
         {this.renderData()}
       </div>

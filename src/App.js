@@ -33,7 +33,7 @@ export class App extends Component {
         <div style={{color: 'red'}}>"mousedown" left button, then "move"</div>
         <Line data={createData()} 
              fill={'#3182bd'}
-             title='Bar Chart'
+             title='Line Chart'
              xAxisTickInterval={{unit: 'day', interval: 10}}
              height={200} 
              width={500} 
@@ -51,7 +51,7 @@ export class App extends Component {
         />
         <Area data={createData()} 
              fill={'#3182bd'}
-             title='Bar Chart'
+             title='Area Chart'
              xAxisTickInterval={{unit: 'day', interval: 10}}
              height={200} 
              width={500} 
