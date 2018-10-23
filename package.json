@@ -16,7 +16,7 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "react-d3": "^0.4.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
     "babel": "^5.8.23",
